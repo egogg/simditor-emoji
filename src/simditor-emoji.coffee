@@ -55,6 +55,8 @@ class EmojiButton extends Simditor.Button
 
   menu: true
 
+  needFocus: false
+
   constructor: (args...) ->
     super args...
     $.merge @editor.formatter._allowedAttributes['img'], ['data-emoji', 'alt']
@@ -76,12 +78,12 @@ class EmojiButton extends Simditor.Button
     for name in opts.images
       html += "<li data-name='#{ name }'><img src='#{ dir }#{ name }.png' width='20' height='20' alt='#{ name }' /></li>"
 
-    $list= $(tpl)
+    $list = $(tpl)
     $list.html(html).appendTo(@menuWrapper)
 
     $list.on 'mousedown', 'li', (e) =>
       @wrapper.removeClass('menu-on')
-      return unless @editor.inputManager.focused
+      @editor.focus() if !@editor.inputManager.focused
 
       $img = $(e.currentTarget).find('img').clone()
         .attr({
