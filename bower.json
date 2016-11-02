@@ -6,7 +6,10 @@
     "tinyfive <tinyfive@mycolorway.com>"
   ],
   "description": "a simditor plugin emoji",
-  "main": "lib/simditor-emoji.js",
+  "main": [
+    "lib/simditor-emoji.js",
+    "styles/simditor-emoji.css"
+  ],
   "keywords": [
     "simditor",
     "emoji"
@@ -23,7 +26,6 @@
     "jasmine-jquery": "2.x"
   },
   "dependencies": {
-    "jquery": "~2.1.0",
-    "simditor": "2.3.x"
+    "jquery": "~2.1.0"
   }
 }
