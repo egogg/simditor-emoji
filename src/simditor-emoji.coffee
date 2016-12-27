@@ -61,7 +61,9 @@ class EmojiButton extends Simditor.Button
     super args...
     $.merge @editor.formatter._allowedAttributes['img'], ['data-emoji', 'alt']
 
-  renderMenu: ->
+  loadMenu: ->
+    return unless !$.trim(@menuWrapper.html()).length
+    
     tpl = '''
       <ul class="emoji-list">
       </ul>
@@ -95,6 +97,8 @@ class EmojiButton extends Simditor.Button
       @editor.trigger 'valuechanged'
       @editor.trigger 'selectionchanged'
       false
+
+  renderMenu: ->
 
   status: ->
     # do nothing
