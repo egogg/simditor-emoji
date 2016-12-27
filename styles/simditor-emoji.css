@@ -20,6 +20,8 @@
 }
 .simditor .simditor-toolbar ul.emoji-list img {
   display: block;
+  width: 24px;
+  height: 24px;
 }
 
 .editor-style img[data-emoji],

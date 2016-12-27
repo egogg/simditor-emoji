@@ -73,12 +73,12 @@ class EmojiButton extends Simditor.Button
       imagePath: 'images/emoji/'
       images: EmojiButton.images
     }, @editor.opts.emoji || {})
-
+    
     html = ""
     dir  = opts.imagePath.replace(/\/$/, '') + '/'
 
     for name in opts.images
-      html += "<li data-name='#{ name }'><img src='#{ dir }#{ name }.png' width='20' height='20' alt='#{ name }' /></li>"
+      html += "<li data-name='#{ name }'><img src='#{ dir }#{ name }.png' alt='#{ name }' /></li>"
 
     $list = $(tpl)
     $list.html(html).appendTo(@menuWrapper)
